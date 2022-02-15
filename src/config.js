@@ -2,6 +2,8 @@ const basePath = process.cwd()
 const { MODE } = require(`${basePath}/constants/blend_mode.js`)
 const { NETWORK } = require(`${basePath}/constants/network.js`)
 
+const layerConfigurations = require("../config/layer_config")
+
 const network = NETWORK.eth
 
 // General metadata for Ethereum
@@ -20,50 +22,6 @@ const solanaMetadata = {
 		},
 	],
 }
-
-// If you have selected Solana then the collection starts from 0 automatically
-const layerConfigurations = [
-	{
-		growEditionSizeTo: 5,
-		creature: "Bushcrab",
-		description: "This is the description for this layer set.",
-		layersOrder: [
-			{
-				name: "BodyTypeBasic",
-				options: {
-					displayName: "Body Type",
-				},
-			},
-			{
-				name: "Claw1",
-				options: {
-					displayName: "Claw",
-				},
-			},
-			{
-				name: "Head1",
-				options: {
-					displayName: "Head",
-				},
-			},
-			{
-				name: "Face1",
-				options: {
-					displayName: "Face",
-				},
-			},
-			{
-				name: "Body1",
-				options: {
-					displayName: "Body",
-				},
-			},
-			{
-				name: "Species",
-			},
-		],
-	},
-]
 
 const shuffleLayerConfigurations = false
 
