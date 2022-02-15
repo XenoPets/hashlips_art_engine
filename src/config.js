@@ -26,6 +26,7 @@ const layerConfigurations = [
 	{
 		growEditionSizeTo: 5,
 		creature: "Bushcrab",
+		description: "This is the description for this layer set.",
 		layersOrder: [
 			{
 				name: "BodyTypeBasic",

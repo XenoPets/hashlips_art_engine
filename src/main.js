@@ -130,11 +130,11 @@ const drawBackground = () => {
 	ctx.fillRect(0, 0, format.width, format.height)
 }
 
-const addMetadata = (_dna, _edition) => {
+const addMetadata = (_dna, _edition, _layerConfig) => {
 	let dateTime = Date.now()
 	let tempMetadata = {
 		name: `${namePrefix} #${_edition}`,
-		description: description,
+		description: _layerConfig.description,
 		image: `${baseUri}/${_edition}.png`,
 		dna: sha1(_dna),
 		edition: _edition,
@@ -410,7 +410,11 @@ const startCreating = async () => {
 						  )
 						: null
 					saveImage(abstractedIndexes[0])
-					addMetadata(newDna, abstractedIndexes[0])
+					addMetadata(
+						newDna,
+						abstractedIndexes[0],
+						layerConfigurations[layerConfigIndex]
+					)
 					saveMetaDataSingleFile(abstractedIndexes[0])
 					console.log(
 						`Created edition: ${
